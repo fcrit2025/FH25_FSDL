@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS Routing</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+</head>
+<body>
+
+  <div ng-app="myApp">
+    <h1>AngularJS Routing Example</h1>
+
+    <ul>
+      <li><a ui-sref="home">Home</a></li>
+      <li><a ui-sref="about">About</a></li>
+    </ul>
+
+    <div ui-view></div> <!-- Where views will be injected -->
+
+  </div>
+
+  <script>
+    var app = angular.module('myApp', ['ui.router']);
+    
+    app.config(function($stateProvider, $urlRouterProvider) {
+      // Default route
+      $urlRouterProvider.otherwise("/home");
+
+      // State definitions
+      $stateProvider
+        .state('home', {
+          url: "/home",
+          template: "<h2>Welcome to the Home Page!</h2>"
+        })
+        .state('about', {
+          url: "/about",
+          template: "<h2>About Us</h2><p>This is a simple about page.</p>"
+        });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple AngularJS App</title>
+  <!-- Include AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <h1>{{ greeting }}</h1>
+  </div>
+
+  <!-- AngularJS Script -->
+  <script>
+    // Define the AngularJS module
+    var app = angular.module('myApp', []);
+    
+    // Define the controller for this module
+    app.controller('myCtrl', function($scope) {
+      $scope.greeting = "Hello, AngularJS!";
+    });
+  </script>
+
+</body>
+</html>

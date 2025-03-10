@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS Conditionals and Loops</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <h1>AngularJS Conditionals and Loops</h1>
+
+    <!-- ng-if: Conditional Rendering -->
+    <button ng-click="isVisible = !isVisible">Toggle Message</button>
+    <p ng-if="isVisible">This message is conditionally shown or hidden based on the button click.</p>
+
+    <hr>
+
+    <!-- ng-repeat: Looping through an array -->
+    <h2>List of Students:</h2>
+    <ul>
+      <li ng-repeat="student in students">{{ student }}</li>
+    </ul>
+  </div>
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      $scope.isVisible = true;
+      $scope.students = ["John", "Jane", "Mark", "Sara"];
+    });
+  </script>
+
+</body>
+</html>
