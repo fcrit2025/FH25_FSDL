@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 function Form() {
   const [inputValue, setInputValue] = useState('');
 
@@ -7,7 +6,6 @@ function Form() {
     e.preventDefault();
     alert(`Submitted: ${inputValue}`);
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <input 

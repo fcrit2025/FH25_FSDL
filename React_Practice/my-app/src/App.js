@@ -8,10 +8,11 @@ import JsxExample from './components/JsxExample';
 import WelcomeMessage from './components/PropsExample';
 import InputFocus from './components/InputFocus';
 import ListComponent from './components/ListComponent';
+import Counter1 from './components/Counter1';
 function App() {
   return (
     <div className="App">
-      <JsxExample />
+      {/* <JsxExample /> */}
       {/* <Greeting /> */}
       {/* <WelcomeMessage username="FSDL_FH2025" /> */}
       {/* <Counter /> */}
@@ -19,6 +20,7 @@ function App() {
       {/* <ToggleButton /> */}
       {/* <InputFocus /> */}
       {/* <ListComponent /> */}
+      <Counter1 />
     </div>
   );
 }
