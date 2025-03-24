@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Column Layout with CSS Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr; /* Three columns */
+            gap: 10px; /* Space between columns */
+            padding: 10px;
+        }
+        header, footer {
+            grid-column: 1 / -1; /* Span across all columns */
+            background: #4CAF50; /* Green */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .column {
+            background: #f4f4f4; /* Light Gray */
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <div class="column">Left Column</div>
+    <div class="column">Main Content</div>
+    <div class="column">Right Column</div>
+    <footer>Footer</footer>
+</body>
+</html>

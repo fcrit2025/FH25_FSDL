@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout with Shadow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            background-color: #f4f4f4; /* Light Gray */
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            overflow: hidden; /* Ensures content stays within the card */
+            width: 300px; /* Fixed width */
+            text-align: center;
+        }
+        .card img {
+            width: 100%; /* Full width of the card */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .card h2 {
+            margin: 15px 0 10px; /* Spacing around the title */
+            font-size: 1.5rem;
+        }
+        .card p {
+            margin: 0 15px 15px; /* Spacing around the description */
+            color: #666; /* Gray text */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="jpeg-home.jpg" alt="Card Image">
+        <h2>Card Title</h2>
+        <p>This is a simple card layout with a shadow effect. It includes an image, a title, and a description.</p>
+    </div>
+</body>
+</html>
