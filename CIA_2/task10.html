@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Factorial Calculator</h1>
+    <script>
+        // Function to calculate factorial using recursion
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1; // Base case
+            }
+            return n * factorial(n - 1); // Recursive case
+        }
+
+        // Take input for the number
+        const number = parseInt(prompt("Enter a number to calculate its factorial:"));
+
+        // Calculate factorial
+        const result = factorial(number);
+
+        // Display the result
+        alert(`The factorial of ${number} is: ${result}`);
+    </script>
+</body>
+</html>

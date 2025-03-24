@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Numbers from 1 to 100</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sum of Numbers from 1 to 100</h1>
+    <script>
+        let sum = 0; // Initialize sum
+        let i = 1;   // Initialize counter
+
+        // Use a while loop to calculate the sum
+        while (i <= 100) {
+            sum += i; // Add current value of i to sum
+            i++;      // Increment counter
+        }
+
+        // Display the result
+        alert(`The sum of numbers from 1 to 100 is: ${sum}`);
+    </script>
+</body>
+</html>

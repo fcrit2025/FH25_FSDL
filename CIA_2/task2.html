@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Two Variables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check the Console for Swapped Values</h1>
+    <script>
+        // Initialize two variables
+        let a = 5;
+        let b = 10;
+
+        // Display initial values
+        console.log("Before swapping:");
+        console.log("a =", a);
+        console.log("b =", b);
+
+        // Swap values using a temporary variable
+        let temp = a;
+        a = b;
+        b = temp;
+
+        // Display swapped values
+        console.log("After swapping:");
+        console.log("a =", a);
+        console.log("b =", b);
+    </script>
+</body>
+</html>

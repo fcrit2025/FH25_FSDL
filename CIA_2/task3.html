@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of a Rectangle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Area of a Rectangle Calculator</h1>
+    <script>
+        // Take input for length and width
+        const length = parseFloat(prompt("Enter the length of the rectangle:"));
+        const width = parseFloat(prompt("Enter the width of the rectangle:"));
+
+        // Calculate the area
+        const area = length * width;
+
+        // Display the result
+        alert(`The area of the rectangle is: ${area}`);
+    </script>
+</body>
+</html>

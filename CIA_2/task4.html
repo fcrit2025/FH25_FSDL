@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Even or Odd Checker</h1>
+    <script>
+        // Take input from the user
+        const number = parseFloat(prompt("Enter a number:"));
+
+        // Check if the number is even or odd
+        if (number % 2 === 0) {
+            alert(`${number} is an even number.`);
+        } else {
+            alert(`${number} is an odd number.`);
+        }
+    </script>
+</body>
+</html>
