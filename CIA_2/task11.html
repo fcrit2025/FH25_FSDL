@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Palindrome Checker</h1>
+    <script>
+        // Function to check if a string is a palindrome
+        function isPalindrome(str) {
+            // Remove non-alphanumeric characters and convert to lowercase
+            const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+            // Reverse the string
+            const reversedStr = cleanedStr.split('').reverse().join('');
+            // Check if the cleaned string matches the reversed string
+            return cleanedStr === reversedStr;
+        }
+
+        // Take input for the string
+        const inputString = prompt("Enter a string to check if it is a palindrome:");
+
+        // Check if the string is a palindrome
+        const result = isPalindrome(inputString);
+
+        // Display the result
+        if (result) {
+            alert(`"${inputString}" is a palindrome!`);
+        } else {
+            alert(`"${inputString}" is not a palindrome.`);
+        }
+    </script>
+</body>
+</html>
