@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="studentRecordsApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records Management</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="studentController">
+    <div class="container">
+        <h1>Student Records Management</h1>
+        
+        <!-- Student Form -->
+        <form name="studentForm" novalidate ng-submit="submitStudent()">
+            <h2>Add/Edit Student</h2>
+            
+            <div class="form-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" ng-model="currentStudent.id" 
+                       ng-required="true" ng-pattern="/^[0-9]{6}$/" ng-disabled="isEditing">
+                <span ng-show="studentForm.studentId.$error.required && studentForm.studentId.$touched" class="error">
+                    Student ID is required
+                </span>
+                <span ng-show="studentForm.studentId.$error.pattern && studentForm.studentId.$touched" class="error">
+                    Must be 6 digits
+                </span>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" ng-model="currentStudent.name" 
+                       ng-required="true" ng-minlength="3" ng-maxlength="50">
+                <span ng-show="studentForm.name.$error.required && studentForm.name.$touched" class="error">
+                    Name is required
+                </span>
+                <span ng-show="studentForm.name.$error.minlength && studentForm.name.$touched" class="error">
+                    Name must be at least 3 characters
+                </span>
+                <span ng-show="studentForm.name.$error.maxlength && studentForm.name.$touched" class="error">
+                    Name cannot exceed 50 characters
+                </span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" ng-model="currentStudent.email" 
+                       ng-required="true">
+                <span ng-show="studentForm.email.$error.required && studentForm.email.$touched" class="error">
+                    Email is required
+                </span>
+                <span ng-show="studentForm.email.$error.email && studentForm.email.$touched" class="error">
+                    Invalid email format
+                </span>
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" ng-model="currentStudent.age" 
+                       ng-required="true" min="16" max="30">
+                <span ng-show="studentForm.age.$error.required && studentForm.age.$touched" class="error">
+                    Age is required
+                </span>
+                <span ng-show="(studentForm.age.$error.min || studentForm.age.$error.max) && studentForm.age.$touched" class="error">
+                    Age must be between 16 and 30
+                </span>
+            </div>
+            
+            <div class="form-group">
+                <label for="grade">Grade:</label>
+                <select id="grade" name="grade" ng-model="currentStudent.grade" ng-required="true">
+                    <option value="">Select Grade</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select>
+                <span ng-show="studentForm.grade.$error.required && studentForm.grade.$touched" class="error">
+                    Grade is required
+                </span>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" ng-disabled="studentForm.$invalid">
+                    {{isEditing ? 'Update' : 'Add'}} Student
+                </button>
+                <button type="button" ng-click="resetForm()" ng-disabled="studentForm.$pristine && !isEditing">
+                    Reset
+                </button>
+            </div>
+        </form>
+        
+        <!-- Student List -->
+        <div class="student-list">
+            <h2>Student Records</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Grade</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="student in students track by student.id">
+                        <td>{{student.id}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.email}}</td>
+                        <td>{{student.age}}</td>
+                        <td>{{student.grade}}</td>
+                        <td>
+                            <button ng-click="editStudent(student)">Edit</button>
+                            <button ng-click="deleteStudent(student.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

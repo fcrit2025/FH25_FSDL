@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce PWA</title>
+    <!-- jQuery Mobile CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Header -->
+    <div data-role="page">
+        <div data-role="header">
+            <h1>My E-Commerce Store</h1>
+        </div>
+
+        <!-- Product List -->
+        <div data-role="content">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#">Product 1 - $10</a></li>
+                <li><a href="#">Product 2 - $20</a></li>
+                <li><a href="#">Product 3 - $30</a></li>
+            </ul>
+        </div>
+        <script>
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                  .then(reg => console.log('Service Worker Registered!'))
+                  .catch(err => console.log('SW Registration Failed: ', err));
+              });
+            }
+          </script>
+        <!-- Footer -->
+        <div data-role="footer">
+            <h4>© 2023 My Store</h4>
+        </div>
+    </div>
+
+    <!-- jQuery & jQuery Mobile JS -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</body>
+</html>

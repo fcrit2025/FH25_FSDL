@@ -9,7 +9,7 @@ const PORT = 3000;
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://avp234:<2q4OeypKQZOZp3o4>@cluster0.fk3ty.mongodb.net/User?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://avp234:2q4OeypKQZOZp3o4@cluster0.fk3ty.mongodb.net/User?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
